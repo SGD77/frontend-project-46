@@ -4,9 +4,8 @@ import { Command } from 'commander';
 const program = new Command();
 
 program
-
-    .version('0.0.1', '-v, --version', 'output the current version')
+    .description('Compares two configuration files and shows a difference.')
+    .option('-V, --version', 'output the version number')
     .helpOption('-h, --help', 'output usage information')
-    .description('Compares two configuration files and shows a difference.');
-
-program.parse();
+    .option('-f, --format', 'output format')
+    .parse(process.arvg);
