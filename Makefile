@@ -1,5 +1,3 @@
-setup: install build
-
 install:
 	npm ci
 

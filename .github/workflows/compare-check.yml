@@ -8,7 +8,7 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                 cache: npm
-            - run: make setup
+            - run: make install
             - run: make test
             - name: Test & publish code coverage
               uses: paambaati/codeclimate-action@v5.0.0
