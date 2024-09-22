@@ -5,7 +5,7 @@ publish:
 	npm publish --dry-run
 
 test:
-	npx jest --watch
+	npm test
 
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8
