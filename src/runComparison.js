@@ -23,6 +23,6 @@ const runComparison = (file1, file2) => {
 //     "host": "hexlet.io"
 // }
 
-console.log(runComparison('../fixtures/file1.json','../fixtures/file2.json'))
+// console.log(runComparison('../fixtures/file1.json','../fixtures/file2.json'))
 
 export default runComparison;
