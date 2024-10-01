@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const compare = (obj1, obj2) => {
+const compareContent = (obj1, obj2) => {
     // get all keys, sorted
     const keys = _.union(_.keys(obj1), _.keys(obj2)).sort();
     // console.log(`${keys} - all keys sorted`);
@@ -26,4 +26,4 @@ const compare = (obj1, obj2) => {
     return result.join('\n');
 };
 
-export default compare;
+export default compareContent;
