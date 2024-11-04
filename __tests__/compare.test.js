@@ -1,8 +1,7 @@
-// import _ from 'lodash';
-import compare from '../src/compare.js';
+import compare from '../src/compareContent.js';
 
 describe('compare function', () => {
-    test('unchanged', () => {
+    test('should return unchanged properties when both objects are identical', () => {
         const obj1 = { a: 1, b: 2 };
         const obj2 = { a: 1, b: 2 };
 
@@ -12,7 +11,7 @@ describe('compare function', () => {
         expect(result).toBe(expected);
     });
 
-    test('added in obj2', () => {
+    test('should handle added properties in obj2', () => {
         const obj1 = { a: 1 };
         const obj2 = { a: 1, b: 2 };
 
@@ -22,7 +21,7 @@ describe('compare function', () => {
         expect(result).toBe(expected);
     });
 
-    test('deleted from obj2', () => {
+    test('should handle deleted properties from obj1', () => {
         const obj1 = { a: 1, b: 2 };
         const obj2 = { a: 1 };
 
@@ -32,7 +31,7 @@ describe('compare function', () => {
         expect(result).toBe(expected);
     });
 
-    test('changed in obj2', () => {
+    test('should handle changed properties between obj1 and obj2', () => {
         const obj1 = { a: 1, b: 2 };
         const obj2 = { a: 1, b: 3 };
 
@@ -42,7 +41,7 @@ describe('compare function', () => {
         expect(result).toBe(expected);
     });
 
-    test('unchanged, changed, added, deleted', () => {
+    test('should handle a mix of added, deleted, and changed properties', () => {
         const obj1 = { a: 1, b: 2, c: 3 };
         const obj2 = { a: 1, b: 3, d: 4 };
 
@@ -51,4 +50,5 @@ describe('compare function', () => {
 
         expect(result).toBe(expected);
     });
+
 });
