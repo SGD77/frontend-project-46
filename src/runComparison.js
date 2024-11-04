@@ -10,19 +10,4 @@ const runComparison = (file1, file2) => {
     return compareContent(parsedContent1, parsedContent2);
 };
 
-// const f1 = {
-//     "host": "hexlet.io",
-//     "timeout": 50,
-//     "proxy": "123.234.53.22",
-//     "follow": false
-// };
-
-// const f2 = {
-//     "timeout": 20,
-//     "verbose": true,
-//     "host": "hexlet.io"
-// }
-
-// console.log(runComparison('../fixtures/file1.json','../fixtures/file2.json'))
-
 export default runComparison;

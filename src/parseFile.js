@@ -8,5 +8,3 @@ const parseFile = (file) => {
 }
 
 export default parseFile;
-
-// console.log(parseFile('../fixtures/file1.json'))
