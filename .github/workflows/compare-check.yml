@@ -4,11 +4,17 @@ jobs:
     check:
         runs-on: ubuntu-latest
         steps:
+            #checkout
             - uses: actions/checkout@v4
+            #setup node
             - uses: actions/setup-node@v4
               with:
                 cache: npm
+            #install dependencies
             - run: make install
+            #run linter
+            - run: make lint 
+            #run tests
             - run: make test
             - name: Test & publish code coverage
               uses: paambaati/codeclimate-action@v5.0.0
@@ -17,4 +23,3 @@ jobs:
               with:
                coverageCommand: make test-coverage
                debug: true
-            - run: make lint 

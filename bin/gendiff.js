@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-// import parseFile from '../src/parse.js';
-import compareJson from '../src/compare.js';
-import parseFile from '../src/parse.js';
+import runComparison from '../src/runComparison.js';
 
 const program = new Command();
 
@@ -15,15 +13,7 @@ program
     .option('-f, --format <type>', 'output format')
     .argument('<filepath1>', 'first file')
     .argument('<filepath2>', 'second file')
-    // *parse*
-    // .action((filepath1, filepath2) => {
-    //     console.log(parseFile(filepath1));
-    //     console.log(parseFile(filepath2));
-    // })
-    // *compare*
     .action((filepath1, filepath2) => {
-        const parsed1 = parseFile(filepath1);
-        const parsed2 = parseFile(filepath2)
-        console.log(compareJson(parsed1, parsed2))
+        console.log(runComparison(filepath1, filepath2))
     })
     .parse(process.arvg);
