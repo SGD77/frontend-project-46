@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const compareContent = (obj1, obj2) => {
+const buildDiffList = (obj1, obj2) => {
     // get all keys, sorted
     const keys = _.union(_.keys(obj1), _.keys(obj2)).sort();
     // console.log(`${keys} - all keys sorted`);
@@ -9,21 +9,21 @@ const compareContent = (obj1, obj2) => {
         // added
         if (!Object.hasOwn(obj1, key)) {
             result.push(`+ ${key}: ${obj2[key]}`);
-            // deleted
+        // deleted
         } else if (!Object.hasOwn(obj2, key)) {
-            result.push(`+ ${key}: ${obj1[key]}`);
-            // unchanged
+            result.push(`- ${key}: ${obj1[key]}`);
+        // unchanged
         } else if (obj1[key] === obj2[key]) {
             result.push(`  ${key}: ${obj1[key]}`);
-            // changed
+        // changed
         } else if (obj1[key] !== obj2[key]) {
             result.push(`- ${key}: ${obj1[key]}`);
             result.push(`+ ${key}: ${obj2[key]}`);
         } else {
-            return "Error";
+            throw new Error('Error');
         }
     }
     return result.join('\n');
 };
 
-export default compareContent;
+export default buildDiffList;

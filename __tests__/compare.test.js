@@ -1,4 +1,27 @@
 import compare from '../src/compareContent.js';
+// import fs from 'fs';
+import path from 'path'
+
+const getPath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+// const fileContent = (filename) => fs.readFileSync(getPath(filename), 'utf-8');
+
+describe('compare function yaml', () => {
+    test('flat yaml comparison', () => {
+        const filepath1 = getPath('file1.yml');
+        const filepath2 = getPath('file2.yml');
+
+        const result = `{
+          - follow: false
+              host: hexlet.io
+          - proxy: 123.234.53.22
+          - timeout: 50
+          + timeout: 20
+          + verbose: true
+        }`;
+
+        expect(compare(filepath1, filepath2)).toBe(result);
+    });
+});
 
 describe('compare function', () => {
     test('should return unchanged properties when both objects are identical', () => {

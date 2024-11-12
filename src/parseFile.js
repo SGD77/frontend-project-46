@@ -1,10 +1,13 @@
-// import * as path from 'path';
-import readFile from "./readFile.js";
+import yaml from "js-yaml";
 
-const parseFile = (file) => {
-    // if (path.extname(file) === '.json') {
-        return JSON.parse(readFile(file));
-    // }
-}
+const parse = (content, format) => {
+    if (format === '.json') {
+        return JSON.parse(content)
+    };
+    if (format === '.yml' || format === '.yaml') {
+        return yaml.load(content);
+    }
+    throw new Error('JSON or YAML only');
+};
 
-export default parseFile;
+export default parse;
