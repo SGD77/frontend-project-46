@@ -1,21 +1,26 @@
 const stylish = (diff, depth = 1) => {
+
     //CALCULATE INDENT DEPTH
   const defaultIndent = 4;
   const typeTagOffset = 2;
   const indent = ' '.repeat(depth * defaultIndent - typeTagOffset);
   const childIndent = ' '.repeat((depth + 1) * defaultIndent - typeTagOffset);
+    
     // PRINT VALUES
   const printValue = (value, depth) => {
+    
     // FLAT VALUE
     if (typeof value !== 'object' || value === null) {
       return String(value);
     }
+    
     // INLAID VALUE
-    const entries = Object.entries(value).map(([key, val]) => `${childIndent}  ${key}: ${printValue(val, depth + 1)}`);
+    const entries = Object.entries(value).map(([key, value]) => `${childIndent}  ${key}: ${printValue(value, depth + 1)}`);
     return `{\n${entries.join('\n')}\n${indent}  }`;
   };
+
     // FORM LINES
-  const result = diff.map(node => {
+  const result = diff.map((node) => {
     const { key, type, value, oldValue, newValue, children } = node;
 
     switch (type) {

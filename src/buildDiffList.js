@@ -1,5 +1,15 @@
 import _ from 'lodash';
 
+// RETURNS AN OBJECT FOR EACH KEY IN TWO OBJECTS:
+//{
+//  key:
+//  value:
+//  type:
+//  *children:
+//  *oldValue:
+//  *newValue:
+// } 
+
 const buildDiffList = (obj1, obj2) => {
     // get all keys, sorted
     const keys = _.union(_.keys(obj1), _.keys(obj2)).sort();
