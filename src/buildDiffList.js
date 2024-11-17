@@ -35,31 +35,3 @@ const buildDiffList = (obj1, obj2) => {
 }
 
 export default buildDiffList;
-
-const a = {
-  "setting2": 200,
-  "setting3": true,
-  "setting6": {
-    "doge": {
-      "wow": ""
-    }
-  },
-  "group1": "unchanged"
-};
-
-const b = {
-  "setting1": "Value 1",
-  "setting3": false,
-  "setting6": {
-    "key": "value",
-    "doge": {
-      "wow": "wow"
-    }
-  }
-};
-
-const result = buildDiffList(a, b);
-console.log(JSON.stringify(result, null, 2));
-// console.log(result);
-console.log(typeof result);
-

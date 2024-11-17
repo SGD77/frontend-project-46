@@ -6,7 +6,7 @@ const stylish = (diff) => {
             }
             const entries = Object.entries(value)
                 .map(([key, val]) => {
-                    return `${' '.repeat(currentLevel * 4)}${key.toUpperCase()}: ${printValue(val, currentLevel + 1)}`;
+                    return `${' '.repeat(currentLevel * 4)}${key}: ${printValue(val, currentLevel + 1)}`;
                 });
             return `{\n${entries.join('\n')}\n${' '.repeat((currentLevel - 1) * 4)}}`;
         };
@@ -42,3 +42,52 @@ const stylish = (diff) => {
 };
 
 export default stylish;
+
+// const list = [
+//     {
+//       "key": "group1",
+//       "value": "unchanged",
+//       "type": "deleted"
+//     },
+//     {
+//       "key": "setting1",
+//       "value": "Value 1",
+//       "type": "added"
+//     },
+//     {
+//       "key": "setting2",
+//       "value": 200,
+//       "type": "deleted"
+//     },
+//     {
+//       "key": "setting3",
+//       "oldValue": true,
+//       "newValue": false,
+//       "type": "changed"
+//     },
+//     {
+//       "key": "setting6",
+//       "children": [
+//         {
+//           "key": "doge",
+//           "children": [
+//             {
+//               "key": "wow",
+//               "oldValue": "",
+//               "newValue": "wow",
+//               "type": "changed"
+//             }
+//           ],
+//           "type": "nested"
+//         },
+//         {
+//           "key": "key",
+//           "value": "value",
+//           "type": "added"
+//         }
+//       ],
+//       "type": "nested"
+//     }
+//   ]
+
+// console.log(stylish(list))
