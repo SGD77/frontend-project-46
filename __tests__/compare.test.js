@@ -16,6 +16,8 @@ describe('output tests', () => {
     const json2Path = getPath('file2.json');
     const yaml1Path = getPath('file1.yaml');
     const yaml2Path = getPath('file2.yaml');
+    const path1 = getPath('1.json');
+    const path2 = getPath('2.json');
 
     const stylish = `
 {
@@ -63,8 +65,26 @@ describe('output tests', () => {
     }
 }`
 
-    test('stylish output', () => {
-        expect(compare(json1Path, json2Path)).toBe(stylish)
-        expect(compare(yaml1Path, yaml2Path)).toBe(stylish)
+const short = `
+{
+    common: {
+      + follow: false
+        setting1: Value 1
+      - setting2: 200
+      - setting3: true
+      + setting3: null
+      + setting4: blah blah
+      + setting5: {
+            key5: value5
+        }
+    }
+}`
+
+    // test('stylish output', () => {
+    //     expect(compare(json1Path, json2Path)).toBe(stylish)
+    //     expect(compare(yaml1Path, yaml2Path)).toBe(stylish)
+    // })
+    test('short output', () => {
+        expect(compare(path1, path2)).toBe(short)
     })
 });

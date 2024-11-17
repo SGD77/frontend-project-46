@@ -1,10 +1,7 @@
 {
-    "setting2": 200,
-    "setting3": true,
-    "setting6": {
-        "doge": {
-            "wow": ""
-        }
-    },
-    "group1": "unchanged"
-}
+    "common": {
+      "setting1": "Value 1",
+      "setting2": 200,
+      "setting3": true
+    }
+  }
