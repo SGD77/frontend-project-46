@@ -6,9 +6,9 @@ const stylish = (diff) => {
             }
             const entries = Object.entries(value)
                 .map(([key, val]) => {
-                    return `${' '.repeat(currentLevel * 4)}${key}: ${printValue(val, currentLevel + 1)}`;
+                    return `${' '.repeat((currentLevel + 1) * 4)}${key}: ${printValue(val, currentLevel + 1)}`;
                 });
-            return `{\n${entries.join('\n')}\n${' '.repeat((currentLevel - 1) * 4)}}`;
+            return `{\n${entries.join('\n')}\n${' '.repeat(currentLevel * 4)}}`;
         };
 
         const indent = ' '.repeat(level * 4 - 2);
@@ -33,12 +33,15 @@ const stylish = (diff) => {
                     `${' '.repeat(level * 4)}}`,
                 ].join('\n');
             }
+            if (item.type === 'unchanged') {
+                return `${indent}  ${item.key}: ${printValue(item.value, level)}`;
+            }
         });
 
         return result.join('\n');
     };
 
-    return `{\n${iter(diff, 1)}\n}`;
+    return `\n{\n${iter(diff, 1)}\n}`;
 };
 
 export default stylish;

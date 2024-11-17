@@ -80,11 +80,11 @@ const short = `
     }
 }`
 
-    // test('stylish output', () => {
-    //     expect(compare(json1Path, json2Path)).toBe(stylish)
-    //     expect(compare(yaml1Path, yaml2Path)).toBe(stylish)
-    // })
-    test('short output', () => {
-        expect(compare(path1, path2)).toBe(short)
+    test('stylish output', () => {
+        expect(compare(json1Path, json2Path)).toBe(stylish)
+        expect(compare(yaml1Path, yaml2Path)).toBe(stylish)
     })
+    // test('short output', () => {
+    //     expect(compare(path1, path2)).toBe(short)
+    // })
 });
