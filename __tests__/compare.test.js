@@ -76,6 +76,8 @@ Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
 Property 'group3' was added with value: [complex value]
 `
+const json = `
+[{"key":"common","children":[{"key":"follow","value":false,"type":"added"},{"key":"setting1","value":"Value 1","type":"unchanged"},{"key":"setting2","value":200,"type":"deleted"},{"key":"setting3","oldValue":true,"newValue":null,"type":"changed"},{"key":"setting4","value":"blah blah","type":"added"},{"key":"setting5","value":{"key5":"value5"},"type":"added"},{"key":"setting6","children":[{"key":"doge","children":[{"key":"wow","oldValue":"","newValue":"so much","type":"changed"}],"type":"nested"},{"key":"key","value":"value","type":"unchanged"},{"key":"ops","value":"vops","type":"added"}],"type":"nested"}],"type":"nested"},{"key":"group1","children":[{"key":"baz","oldValue":"bas","newValue":"bars","type":"changed"},{"key":"foo","value":"bar","type":"unchanged"},{"key":"nest","oldValue":{"key":"value"},"newValue":"str","type":"changed"}],"type":"nested"},{"key":"group2","value":{"abc":12345,"deep":{"id":45}},"type":"deleted"},{"key":"group3","value":{"deep":{"id":{"number":45}},"fee":100500},"type":"added"}]`
 
   test('stylish output', () => {
     expect(compare(json1Path, json2Path, 'stylish')).toBe(stylish)
@@ -92,5 +94,9 @@ Property 'group3' was added with value: [complex value]
     expect(compare(yaml1Path, yaml2Path, 'plain')).toBe(plain)
   });
 
+  test('json output', () => {
+    expect(compare(json1Path, json2Path, 'json')).toBe(json)
+    expect(compare(yaml1Path, yaml2Path, 'json')).toBe(json)
+  });
 
 });

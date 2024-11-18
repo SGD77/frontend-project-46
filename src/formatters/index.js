@@ -1,5 +1,6 @@
 import stylish from "./stylish.js";
 import plain from "./plain.js";
+import json from "./json.js";
 
 const getFormatter = (type) => {
 
@@ -8,6 +9,8 @@ const getFormatter = (type) => {
             return stylish;
         case 'plain':
             return plain;
+        case 'json':
+            return json;
         default:
             return stylish;
     }
