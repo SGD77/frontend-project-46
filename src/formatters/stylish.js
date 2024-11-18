@@ -41,7 +41,7 @@ const stylish = (diff) => {
         return result.join('\n');
     };
 
-    return `\n{\n${iter(diff, 1)}\n}`;
+    return `{\n${iter(diff, 1)}\n}`;
 };
 
 export default stylish;

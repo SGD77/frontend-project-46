@@ -2,8 +2,6 @@ import compare from '../src/runComparison.js';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-// const fileContent = (filename) => fs.readFileSync(getPath(filename), 'utf-8');
-
 describe('output tests', () => {
   const getPath = (filename) => {
     const __filename = fileURLToPath(import.meta.url);
@@ -11,14 +9,12 @@ describe('output tests', () => {
     return path.join(__dirname, '..', '__fixtures__', filename);
   };
 
-
   const json1Path = getPath('file1.json');
   const json2Path = getPath('file2.json');
   const yaml1Path = getPath('file1.yaml');
   const yaml2Path = getPath('file2.yaml');
 
-  const stylish = `
-{
+  const stylish = `{
     common: {
       + follow: false
         setting1: Value 1
