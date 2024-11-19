@@ -13,7 +13,8 @@ program
     .option('-f, --format <type>', 'output format', 'stylish')
     .argument('<filepath1>', 'first file')
     .argument('<filepath2>', 'second file')
-    .action((filepath1, filepath2, type) => {
-        console.log(runComparison(filepath1, filepath2, type))
+    .action((filepath1, filepath2) => {
+        const options = program.opts();
+        console.log(runComparison(filepath1, filepath2, options.format))
     })
-    .parse(process.arvg);
+    .parse(process.argv);
