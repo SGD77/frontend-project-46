@@ -18,6 +18,3 @@ const runComparison = (filepath1, filepath2, type) => {
 };
 
 export default runComparison;
-
-// console.log(runComparison('../__fixtures__/file1.json', '../__fixtures__/file2.json'))
-// console.log(runComparison('../__fixtures__/file1.yml', '../__fixtures__/file2.yml'))
