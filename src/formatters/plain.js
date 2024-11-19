@@ -28,7 +28,7 @@ const plain = (diff) => {
             })
         return result.join('\n')
     };
-    return `\n${iter(diff)}\n`;
+    return iter(diff);
 };
 
 export default plain;
