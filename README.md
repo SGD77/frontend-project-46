@@ -44,6 +44,6 @@
     <details>
         <summary> Сравнение json </summary>
 
-    ![json]readme-img/(readme-img/image-3.png)
+    ![json](readme-img/image-3.png)
 
     </details>
