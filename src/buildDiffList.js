@@ -13,8 +13,7 @@ import _ from 'lodash';
 const buildDiffList = (obj1, obj2) => {
   // get all keys, sorted
   const keys = _.union(_.keys(obj1), _.keys(obj2));
-  const sortedKeys = [...keys].sort();
-  // console.log(`${keys} - all keys sorted`);
+  const sortedKeys = _.sortBy(keys);
   return sortedKeys.map((key) => {
     if (!(key in obj1)) {
       return { key, value: obj2[key], type: 'added' };
