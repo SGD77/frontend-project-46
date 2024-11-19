@@ -12,7 +12,6 @@ const getFileFormat = (filepath) => path.extname(filepath);
 
 export { getFullPath, readFile, getFileFormat };
 
-
 // console.log(`\nFull Path:\n${getFullPath('../__fixtures__/file1.yml')}`);
 // console.log(`\nRead File:\n${readFile(getFullPath('../__fixtures__/file1.yml'))}`);
 // console.log(`\nFile Format:\n${getFileFormat(getFullPath('../__fixtures__/file1.yml'))}`)

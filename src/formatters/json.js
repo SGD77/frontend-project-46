@@ -1,5 +1,3 @@
-const json = (diff) => {
-    return `\n${JSON.stringify(diff)}`;
-}
+const json = (diff) => `\n${JSON.stringify(diff)}`;
 
-export default json
+export default json;
