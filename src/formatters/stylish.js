@@ -1,13 +1,13 @@
 const stylish = (diff) => {
+  const printValue = (value, currentLevel) => {
+    if (typeof value !== 'object' || value === null) {
+      return String(value);
+    }
+    const entries = Object.entries(value)
+      .map(([key, val]) => `${' '.repeat((currentLevel + 1) * 4)}${key}: ${printValue(val, currentLevel + 1)}`);
+    return `{\n${entries.join('\n')}\n${' '.repeat(currentLevel * 4)}}`;
+  };
   const iter = (data, level) => {
-    const printValue = (value, currentLevel) => {
-      if (typeof value !== 'object' || value === null) {
-        return String(value);
-      }
-      const entries = Object.entries(value)
-        .map(([key, val]) => `${' '.repeat((currentLevel + 1) * 4)}${key}: ${printValue(val, currentLevel + 1)}`);
-      return `{\n${entries.join('\n')}\n${' '.repeat(currentLevel * 4)}}`;
-    };
     const indent = ' '.repeat(level * 4 - 2);
     const result = data.map((item) => {
       if (item.type === 'added') {
