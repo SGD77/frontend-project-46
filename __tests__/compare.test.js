@@ -30,7 +30,7 @@ describe('output tests', () => {
     ['plain', plain, yaml1Path, yaml2Path],
     ['json', json, json1Path, json2Path],
     ['json', json, yaml1Path, yaml2Path],
-  ])('test outputs', (format, expected, path1, path2) => {
+  ])('outputs corresponding format for each option', (format, expected, path1, path2) => {
     expect(compare(path1, path2, format)).toBe(expected);
   });
 });
