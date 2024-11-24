@@ -8,6 +8,6 @@ const getFullPath = (filepath) => path.resolve(process.cwd(), filepath);
 const readFile = (filepath) => fs.readFileSync(filepath, 'UTF-8');
 
 // GET FORMAT
-const getFileFormat = (filepath) => path.extname(filepath);
+const getFileFormat = (filepath) => path.extname(filepath).slice(1);
 
 export { getFullPath, readFile, getFileFormat };
