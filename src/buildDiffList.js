@@ -6,8 +6,8 @@ import _ from 'lodash';
 //  value:
 //  type:
 //  *children:
-//  *oldValue:
-//  *newValue:
+//  *value1:
+//  *value2:
 // }
 
 const buildDiffList = (obj1, obj2) => {
@@ -26,7 +26,7 @@ const buildDiffList = (obj1, obj2) => {
     }
     if (!_.isEqual(obj1[key], obj2[key])) {
       return {
-        key, oldValue: obj1[key], newValue: obj2[key], type: 'changed',
+        key, value1: obj1[key], value2: obj2[key], type: 'changed',
       };
     }
     if (obj1[key] === obj2[key]) {

@@ -20,7 +20,7 @@ const plain = (diff) => {
           case 'deleted':
             return `Property '${currentProp}' was removed`;
           case 'changed':
-            return `Property '${currentProp}' was updated. From ${printValue(item.oldValue)} to ${printValue(item.newValue)}`;
+            return `Property '${currentProp}' was updated. From ${printValue(item.value1)} to ${printValue(item.value2)}`;
           case 'nested':
             return iter(item.children, currentProp);
           default:

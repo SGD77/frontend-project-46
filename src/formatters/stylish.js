@@ -18,8 +18,8 @@ const stylish = (diff) => {
       }
       if (item.type === 'changed') {
         return [
-          `${indent}- ${item.key}: ${printValue(item.oldValue, level)}`,
-          `${indent}+ ${item.key}: ${printValue(item.newValue, level)}`,
+          `${indent}- ${item.key}: ${printValue(item.value1, level)}`,
+          `${indent}+ ${item.key}: ${printValue(item.value2, level)}`,
         ].join('\n');
       }
       if (item.type === 'nested') {
