@@ -25,25 +25,33 @@
 
 - Помощь по программе
 
-  ![help](readme-img/image.png)
+  <img src='https://github.com/user-attachments/assets/4d27dabf-0242-4df7-8901-5af48c2d4fac' alt = 'help'>
+
 
     <details>
     <summary> Сравнение stylish </summary>
 
-  ![stylish](readme-img/image-1.png)
+
+  ***JSON***
+  
+    <img src='https://github.com/user-attachments/assets/12234ce1-930c-4bd1-aebd-65bea4b23df8' alt = 'json stylish'>
+
+
+  ***YAML***
+
+    <img src='https://github.com/user-attachments/assets/bea785b2-368d-4abd-94b4-8a12fbc2888c' alt = 'yaml stylish'>
 
     </details>
     
     <details>
     <summary> Сравнение plain </summary>
 
-  ![stylish](readme-img/image-2.png)
+    <img src='https://github.com/user-attachments/assets/ffdddf17-08c3-4bb7-ab09-20db00cc71fb' alt = 'plain'>
 
     </details>
     
     <details>
-        <summary> Сравнение json </summary>
-
-    ![json](readme-img/image-3.png)
-
+    <summary> Сравнение json </summary>
+        
+    <img src='https://github.com/user-attachments/assets/011c904f-b033-4af1-98ce-ddfa475fbd5d' alt = 'json'>
     </details>
