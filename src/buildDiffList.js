@@ -24,7 +24,7 @@ const buildDiffList = (obj1, obj2) => {
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
       return { key, children: buildDiffList(obj1[key], obj2[key]), type: 'nested' };
     }
-    if (obj1[key] !== obj2[key]) {
+    if (!_.isEqual(obj1[key], obj2[key])) {
       return {
         key, oldValue: obj1[key], newValue: obj2[key], type: 'changed',
       };
