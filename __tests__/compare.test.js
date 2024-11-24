@@ -21,23 +21,16 @@ describe('output tests', () => {
   const plain = readFile(plainPath);
   const json = readFile(jsonPath);
 
-  test('stylish output', () => {
-    expect(compare(json1Path, json2Path, 'stylish')).toBe(stylish);
-    expect(compare(yaml1Path, yaml2Path, 'stylish')).toBe(stylish);
-  });
-
-  test('default output', () => {
-    expect(compare(json1Path, json2Path)).toBe(stylish);
-    expect(compare(yaml1Path, yaml2Path)).toBe(stylish);
-  });
-
-  test('plain output', () => {
-    expect(compare(json1Path, json2Path, 'plain')).toBe(plain);
-    expect(compare(yaml1Path, yaml2Path, 'plain')).toBe(plain);
-  });
-
-  test('json output', () => {
-    expect(compare(json1Path, json2Path, 'json')).toBe(json);
-    expect(compare(yaml1Path, yaml2Path, 'json')).toBe(json);
+  test.each([
+    ['stylish', stylish, json1Path, json2Path],
+    ['stylish', stylish, yaml1Path, yaml2Path],
+    [undefined, stylish, json1Path, json2Path],
+    [undefined, stylish, yaml1Path, yaml2Path],
+    ['plain', plain, json1Path, json2Path],
+    ['plain', plain, yaml1Path, yaml2Path],
+    ['json', json, json1Path, json2Path],
+    ['json', json, yaml1Path, yaml2Path],
+  ])('test outputs', (format, expected, path1, path2) => {
+    expect(compare(path1, path2, format)).toBe(expected);
   });
 });
